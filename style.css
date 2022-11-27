@@ -1,0 +1,182 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: white;
+  background-color: #9e34cf;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 8vh;
+  background-color: #9415cf;
+}
+
+
+.logo {
+  font-family: 'Kaisei Opti', serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  width: 38%;
+  transition: all 0.5s ease-in-out;
+}
+
+.nav-links li {
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.burger {
+  display: none;
+  cursor: pointer;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px;
+  border-radius: 5px;
+  transition: all 0.5s ease-in-out;
+}
+
+.nav-active {
+  transform: translateX(0%) !important;
+}
+
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+  opacity: 0;
+}
+
+.toggle .line3 {
+  transform: rotate(405deg) translate(-5px, -6px);
+}
+
+.cover-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 92vh;
+}
+
+.headline {
+  font-family: 'Shippori Mincho', serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.headline h2 {
+  font-size: 50px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.headline h3 {
+  background-color: white;
+  color: #9e34cf;
+  text-align: center;
+  width: 60%;
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.content-block {
+  display: flex;
+}
+
+.content-block-reverse {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.content {
+  width: 90%;
+  margin: 5%;
+  font-family: 'Kaisei Opti', serif;
+  font-size: 20px;
+}
+
+ul {
+	list-style-position: inside;
+	list-style-image: url(images/onigiri.svg);
+}
+
+th::before {
+  content: url(images/onigiri.svg)
+}
+
+th, td {
+  width: 300px;
+  text-align: left;
+}
+
+@media screen and (max-width: 1024px) {
+  .nav-links {
+    width: 55%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .nav-links {
+    position: absolute;
+    right: 0;
+    height: 92vh;
+    top: 8vh;
+    background-color: #9415cf;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    transform: translateX(100%);
+  }
+
+  .nav-links li {
+    opacity: 0;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .content-block, .content-block-reverse {
+    flex-direction: column;
+  }
+}
+
+@keyframes navLinksFade {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
