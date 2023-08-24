@@ -72,6 +72,20 @@ nav {
   transform: rotate(405deg) translate(-5px, -6px);
 }
 
+.cover {
+  background-image: url(images/cover.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
 .cover-text {
   display: flex;
   flex-direction: column;
@@ -106,6 +120,10 @@ nav {
 
 .content-block {
   display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 40vh;
 }
 
 .content-block-reverse {
@@ -114,7 +132,7 @@ nav {
 }
 
 .content {
-  width: 90%;
+  width: 50%;
   margin: 5%;
   font-family: 'Kaisei Opti', serif;
   font-size: 20px;
@@ -132,6 +150,26 @@ th::before {
 th, td {
   width: 300px;
   text-align: left;
+}
+
+iframe {
+  width: 40vh;
+  height: 23vh;
+}
+
+a {
+  color: #ADFF2F;
+  /* 黄緑色 */
+}
+
+a:hover {
+  color: #7FFF00;
+  /* マウスオーバー時に少し濃い黄緑 */
+}
+
+.okayu {
+  width: 100%;
+  height: 100%;
 }
 
 @media screen and (max-width: 1024px) {
