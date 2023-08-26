@@ -34,6 +34,7 @@ nav {
 
 .nav-links li {
   list-style: none;
+  font-family: 'Shippori Mincho', serif;
 }
 
 .nav-links a {
@@ -91,6 +92,7 @@ nav {
   justify-content: center;
   align-items: center;
   min-height: 92vh;
+  font-family: 'Kaisei Opti', serif;
 }
 
 .headline {
@@ -171,7 +173,7 @@ a:hover {
 
 @media screen and (max-width: 1024px) {
   .nav-links {
-    width: 55%;
+    width: 65%;
   }
 }
 
