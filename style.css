@@ -77,7 +77,6 @@ nav {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
   min-height: 92vh;
   display: flex;
   flex-direction: column;
@@ -159,12 +158,10 @@ iframe {
 
 a {
   color: #ADFF2F;
-  /* 黄緑色 */
 }
 
 a:hover {
   color: #7FFF00;
-  /* マウスオーバー時に少し濃い黄緑 */
 }
 
 .okayu {
