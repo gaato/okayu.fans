@@ -140,6 +140,13 @@ nav {
   text-align: center;
 }
 
+iframe {
+  width: calc(30vh * 16 / 9);
+  /* 16:9のアスペクト比を維持 */
+  height: 30vh;
+  /* 100vh（ビューポートの高さ）の30% */
+}
+
 ul {
 	list-style-position: inside;
 	list-style-image: url(images/onigiri.svg);
