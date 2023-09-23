@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>猫又おかゆ非公式ファンサイト | おかゆ.fans</title>
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
+    name='viewport' />
+  {{ with resources.Get "images/onigiri.svg" }}
+  <link rel="icon" href="{{ .RelPermalink }}" type="image/svg+xml" />
+  {{ end }}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Kaisei+Opti:wght@500&family=Shippori+Mincho:wght@500&display=swap"
+    rel="stylesheet">
+  {{ $options := dict "transpiler" "libsass" }}
+  {{ with resources.Get "style.scss" | toCSS $options | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ .RelPermalink }}">
+  {{ end }}
+  <!-- Open Graph Meta Tags for Rich Previews -->
+  <meta property="og:title" content="猫又おかゆ非公式ファンサイト | おかゆ.fans">
+  <meta property="og:description" content="猫又おかゆ非公式ファンサイト">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://okayu.fans/images/onigiri.png">
+  <meta property="og:url" content="https://okayu.fans/">
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MVQK1V65GK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+
+  gtag('config', 'G-MVQK1V65GK');
+</script>
+
+<body id="home">
+  <nav>
+    <div class="logo">
+      <h4 class="logo">おかゆ.fans</h1>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#streaming">Streaming</a></li>
+      <li><a href="#music">Music</a></li>
+      <li><a href="#cover">Cover</a></li>
+      <li><a href="#asmr">ASMR</a></li>
+      <li><a href="#profile">Profile</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+    <div class="burger">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+    </div>
+  </nav>
+  {{ with resources.Get "images/cover.png" }}
+  {{ $webpImg := .Resize "1920x webp" }}
+  <div class="cover" style="background-image: url({{ $webpImg.RelPermalink }})">
+    <div class="cover-text">
+      <h1>おかゆ.fans</h1>
+      <p>猫又おかゆ非公式ファンサイト</p>
+    </div>
+  </div>
+  {{ end }}
+  <div id="streaming" class="headline">
+    <h2>直近の配信</h2>
+    <h3>STREAMING</h3>
+  </div>
+  <div class="content-block">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/?list=UUvaTdHTWBGv3MKj3KVqJVCw"
+      title="YouTube video player" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
+  </div>
+  <div id="music" class="headline">
+    <h2>オリジナル曲</h2>
+    <h3>MUSIC</h3>
+  </div>
+  <div class="content-block">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/?list=PL3y-e0n6k6gAkwrtIbBAbDPNFBcHWgyOl"
+      title="YouTube video player" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
+  </div>
+  <div id="cover" class="headline">
+    <h2>歌ってみた</h2>
+    <h3>COVER</h3>
+  </div>
+  <div class="content-block">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/?list=PL3y-e0n6k6gDoG3mViEOESGV1WhY8aCrR"
+      title="YouTube video player" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
+  </div>
+  <div id="asmr" class="headline">
+    <h2>ASMR</h2>
+    <h3>ASMR</h3>
+  </div>
+  <div class="content-block">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/?list=PL3y-e0n6k6gABVGNXnKzuKux7cDhPVZd3"
+      title="YouTube video player" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
+  </div>
+  <div id="profile" class="headline">
+    <h2>プロフィール</h2>
+    <h3>PROFILE</h3>
+  </div>
+  <div class="content-block">
+    <div class="content">
+      {{ with resources.Get "images/okayu.png" }}
+      {{ $webpImg := .Resize "576x webp" }}
+      <picture>
+        <source type="image/webp" srcset="{{ $webpImg.RelPermalink }}">
+        <img loading="lazy" width="{{ .Width }}" height="{{ .Height }}" src="{{ .RelPermalink }}" alt="猫又おかゆ"
+          class="okayu">
+      </picture>
+      {{ end }}
+
+    </div>
+    <div class="content">
+      <h2>猫又おかゆ</h2>
+      <table>
+        <tr>
+          <th>ニックネーム</th>
+          <td>おかゆん</td>
+        </tr>
+        <tr>
+          <th>誕生日</th>
+          <td>2 月 22 日</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="about" class="headline">
+    <h2>本サイトについて</h2>
+    <h3>ABOUT</h3>
+  </div>
+  <div class="content-block">
+    <div class="content">
+      <p>このサイトは現在<a href="https://x.com/gaato11">がーと / gaato</a>が個人で運営していますが、協力者を募集しています。</p>
+      <p>このサイトへの意見や情報加筆、デザイン関係などがあってもなくても<a href="https://discord.gg/Amz34bjsdV">Discordサーバー</a>に参加してみてください！</p>
+      <p>おかゆ.fans は猫又おかゆさんの非公式ファンサイト、およびファンコミュニティです。</p>
+      <p>猫又おかゆさんやカバー株式会社とは一切関係ありません。</p>
+
+    </div>
+  </div>
+  {{ $opts := dict "minify" true }}
+  {{ $built := resources.Get "script.ts" | js.Build $opts }}
+  <script src="{{ $built.RelPermalink }}"></script>
+</body>
+
+</html>
