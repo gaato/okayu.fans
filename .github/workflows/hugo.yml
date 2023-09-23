@@ -1,6 +1,12 @@
 name: Hugo
 
-on: push
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+    types:
+      - closed
 
 jobs:
   build:
@@ -27,6 +33,7 @@ jobs:
           path: public
 
   deploy:
+    if: github.event.pull_request.merged == true || github.event_name == 'push'
     needs: build
     permissions:
       pages: write
